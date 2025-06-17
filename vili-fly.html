@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vili-Fly | Association Aérospatiale</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="sidebar">
+    <div class="nav-icon" onclick="navigate('home')">🏠</div>
+    
+
+    <div class="nav-icon" onclick="toggleDropdown('dropdown-lanceurs')">🚀</div>
+
+<ul id="dropdown-lanceurs" class="dropdown hidden">
+
+    <li class="dropdown-subtitle">CESEO</li>
+    <li class="dropdown-item" onclick="navigate('falkor1')">Falkor-1</li>
+    <li class="dropdown-item" onclick="navigate('falkor2')">Falkor-2</li>
+    <li class="dropdown-item" onclick="navigate('spoutnik')">Module Spoutnik</li>
+    <li class="dropdown-item" onclick="navigate('luna1')">Luna-1</li>
+
+    <li class="dropdown-subtitle">CASUCEM</li>
+    <li class="dropdown-item" onclick="navigate('sa10')">SA-10 FirstFlight</li>
+    <li class="dropdown-item" onclick="navigate('spa100')">SPA-100 Passenger (Taranis)</li>
+    <li class="dropdown-item" onclick="navigate('sa30')">SA-30 Skylover</li>
+    <li class="dropdown-item" onclick="navigate('sa20')">SA-20 Transporter</li>
+
+  </ul>
+</li>
+
+    <div class="nav-icon" onclick="toggleDropdown('missions')">🎯</div>
+    <div id="missions" class="dropdown hidden">
+      <div onclick="navigate('karman1')">Karman-1</div>
+      <div onclick="navigate('karman2')">Karman-2</div>
+      <div onclick="navigate('climosphere1')">ClimOsphère-1</div>
+      <div onclick="navigate('sin1')">Sîn-1</div>
+    </div>
+
+    <div class="nav-icon" onclick="navigate('data')">📊</div>
+    <div class="nav-icon" onclick="navigate('about')">👥</div>
+  </div>
+
+  <div id="main-content" class="main-content"></div>
+
+  <script src="script.js"></script>
+
+  <div id="lightbox" onclick="closeLightbox()">
+  <img src="" alt="Agrandissement">
+</div>
+</body>
+</html>
+

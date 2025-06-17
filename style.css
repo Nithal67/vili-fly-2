@@ -1,0 +1,295 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0a0f2c; /* Fond lisse */
+  color: white;
+  overflow-x: hidden;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+.nav-icon {
+  font-size: 24px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.nav-icon:hover {
+  transform: scale(1.2);
+}
+
+.dropdown {
+  position: absolute;
+  left: 60px;
+  background-color: #000;
+  padding: 10px;
+  border: 1px solid #333;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown div {
+  padding: 8px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown div:hover {
+  background-color: #333;
+}
+
+/* Catégorie (titre CESEO, CASUCEM) */
+.dropdown-subtitle {
+  font-weight: bold;
+  color: #fff;
+  background-color: #111;
+  padding: 6px 12px;
+  margin-top: 8px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  pointer-events: none;
+}
+
+/* Boutons visuels */
+.dropdown-item {
+  background-color: #1e1e1e;
+  margin: 5px 10px;
+  padding: 8px 12px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+.dropdown-item:active {
+  background-color: #555;
+  transform: scale(0.98);
+}
+
+.hidden {
+  display: none;
+}
+
+.main-content {
+  margin-left: 80px;
+  padding: 0;
+}
+
+.intro {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, transform 1s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.intro.hide {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.intro-logo {
+  width: 100%;
+  max-width: 1800px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.page-content {
+  padding: 40px;
+  backdrop-filter: blur(10px); /* Plus flou après scroll */
+  background: rgba(10, 10, 30, 0.4);
+  margin-top: -50px;
+  min-height: 100vh;
+  z-index: 1;
+  position: relative;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  background: none;
+  backdrop-filter: none;
+}
+
+.home-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 40px;
+  z-index: 2;
+}
+
+.home-title {
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  margin: 0;
+}
+
+.full-page-title {
+  font-size: 10vw; /* Adapte à la largeur de l'écran */
+  font-weight: bold;
+  z-index: 2;
+}
+
+.no-blur {
+  backdrop-filter: none !important;
+  background: none !important;
+}
+
+/* Animation d’apparition du logo */
+.intro-logo {
+  width: 300px;
+  height: auto;
+  animation: logoIn 1.2s ease forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes logoIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation de disparition (logo qui s’en va au scroll) */
+.intro {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  transition: all 1s ease;
+  z-index: 1;
+}
+
+.intro.hide {
+  opacity: 0;
+  transform: translateY(-50px);
+  pointer-events: none;
+}
+
+.page-content h2,
+.page-content h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffff;
+}
+
+.page-content ul, .page-content ol {
+  margin-left: 2rem;
+}
+
+.page-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.page-content td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  vertical-align: top;
+}
+
+.page-content blockquote {
+  font-style: italic;
+  color: #ccc;
+  margin: 1em;
+  padding-left: 1em;
+  border-left: 3px solid #888;
+}
+
+.intro-home {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+.intro-home .vf { color: #00f7ff; }
+
+.home-photos .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.home-photos img {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.home-news .news-item {
+  background: rgba(255,255,255,0.08);
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-left: 4px solid #00f7ff;
+  border-radius: 6px;
+}
+
+
+.anim-intro      { opacity: 0; transform: translateY(40px); transition: 0.8s ease; }
+.anim-logo       { opacity: 0; transform: scale(0.8);        transition: 0.8s ease; }
+.anim-title      { opacity: 0; transform: translateY(20px);  transition: 0.8s ease 0.1s; }
+
+
+.anim-intro.show { opacity: 1; transform: translateY(0); }
+.anim-logo.show  { opacity: 1; transform: scale(1); }
+.anim-title.show { opacity: 1; transform: translateY(0); }
+
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;                 
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;                 
+}
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  animation: zoomIn .4s ease;
+}
+@keyframes zoomIn {
+  from { transform: scale(.8); opacity:0; }
+  to   { transform: scale(1); opacity:1; }
+}
+
+
